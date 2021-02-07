@@ -1,0 +1,12 @@
+{% extends "registration/base_generic.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+  <form method="POST" ">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input class="boxed-btn3 w-50" type="submit" value="signup" / >
+  </form>
+
+{% endblock %}

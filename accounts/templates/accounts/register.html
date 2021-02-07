@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+{%load crispy_forms_tags %}
+
+<!-- Register -->
+<style>
+#hint_id_username, #hint_id_password1, #hint_id_password2 {
+         display: none;
+     }
+</style>
+    <!--================Checkout Area =================-->
+    <section class="checkout_area section_gap">
+      <div class="container">
+
+        <div class="billing_details">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>Register Here</h3>
+              <form class="row contact_form"  method="POST"  novalidate="novalidate" >
+                  {% csrf_token %}
+                  <br>
+                    {{ form|crispy }}<br>
+                  <br>
+
+            <div class="form-input pt-30">
+                <input type="submit" class="main_btn mt-40" name="submit" value="login">
+            </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Checkout Area =================-->
+{% endblock  %}

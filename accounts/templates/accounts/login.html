@@ -1,0 +1,58 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+{%load crispy_forms_tags %}
+
+<!-- Register -->
+<style>
+
+</style>
+    <!--================Checkout Area =================-->
+    <section class="checkout_area section_gap">
+      <div class="container">
+
+        <div class="billing_details">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>Login Here</h3>
+              <form
+                class="row contact_form"
+                method="POST"
+                novalidate="novalidate"
+              >
+                  {% csrf_token %}
+                <div class="col-md-6 form-group p_star">
+                    <label for="name">username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Username"
+                  />
+
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+              <label for="password">password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+            <div class="form-input pt-30">
+                <input type="submit" class="main_btn mt-40" name="submit" value="login">
+                <a href="{% url 'accounts:signup' %}" class="main_btn mt-40" style="margin-left: 20px"> Create An Account</a>
+            </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Checkout Area =================-->
+{% endblock  %}
